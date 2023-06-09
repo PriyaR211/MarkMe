@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  scroll-behavior: smooth;
+}
+
+.backdrop {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.options {
+  position: fixed;
+  z-index: 2;
+  top: 15%;
+  right: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  display: none;
+}
+.options a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  background-color: #40ba55;
+  padding: 0.2rem 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+}
+.open {
+  display: flex;
+}
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px black solid; */
+  margin: 15px 25px;
+  margin-left: 45px;
+  /* overflow: hidden; */
+}
+
+.logo {
+  /* border: 2px black solid; */
+  background-image: url("./Images/LOGO.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 70px;
+  height: 70px;
+}
+.main_nav {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* border: 2px black solid; */
+}
+.main_nav_item {
+  list-style: none;
+  font-size: 1.5rem;
+}
+.main_nav_item a {
+  text-decoration: none;
+  color: black;
+  margin: 0 20px;
+}
+.side_nav {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  /* border: 2px black solid; */
+}
+.side_nav_item {
+  list-style: none;
+  font-size: 1.5rem;
+}
+.side_nav_item a {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 8px;
+}
+#sign_up_button a {
+  color: white;
+  background-color: #40ba55;
+}
+
+.nav_bar a:hover {
+  color:rgb(142, 45, 246);
+  border-bottom: 2px solid black;
+  cursor: pointer;
+}
+
+#sign_up_button a:hover {
+  /* color: black; */
+  /* border: black solid 1px; */
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.side_nav a:hover {
+  border: none;
+}
+
+/* profle */
+
+.profile_info {
+  display: none;
+  position: fixed;
+  top: 15%;
+  right: 2%;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+}
+.profile_info p {
+  font-weight: bold;
+  color: blueviolet;
+}
+.profile_info p span {
+  color: black;
+  font-weight: 100;
+}
+.profile_info button {
+  width: 100%;
+  color: white;
+  font-size: 1.3rem;
+  background-color: #ff3f3f;
+  border-radius: 5px;
+  border: none;
+  padding: 0.4rem;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* error messages */
+.message {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom:1rem ;
+}

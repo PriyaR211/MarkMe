@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Teacher</title>
+    <link rel="stylesheet" href="signup_shared.css">
+    <link rel="styleSheet" href="shared.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <link rel="stylesheet" href="./responsive/mediaQueries.css">
+</head>
+<header>
+    <nav class="nav_bar">
+        <div class="logo">
+
+        </div>
+        <ul class="main_nav">
+            <li class="main_nav_item"><a href="index.html">Home</a></li>
+            <li class="main_nav_item"><a href="index.html">About</a></li>
+            <li class="main_nav_item"><a href="index.html">Contact Us</a></li>
+        </ul>
+        <ul class="side_nav">
+            <li class="side_nav_item"><a href="login.html">Login</a></li>
+            <li class="side_nav_item" id="sign_up_button" class="sign_option"><a>Sign Up</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+</header>
+<div class="options">
+    <a href="signup_teacher.html">Teacher</a>
+    <a href="signup.html">Student</a>
+    <!-- <a id="back" href="./">Back</a> -->
+</div>
+
+<body>
+    <div class="backdrop"></div>
+    <main>
+        <p class="message"></p>
+        <div class="heading">
+            <h2>Create new account</h2>
+            <p>if already exist then <a href="login.html">login</a></p>
+
+        </div>
+        <form class="container" onsubmit="submitHandler(event)">
+            <div class="container_element">
+                <div class=" left">
+                    <h2 style="text-align: center;">Personal
+                        Info</h2>
+                    <div class="left_element">
+                        <div class="label_input">
+                            <label for="name">First Name:</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                    </div>
+                    <div class="left_element">
+                        <div class="label_input">
+                            <label for="l_name">Last Name:</label>
+                            <input type="text" id="l_name" required>
+                        </div>
+
+                    </div>
+                    <div class="left_element">
+
+                        <div class="label_input">
+                            <label for="m_no">Mobile No:</label>
+                            <input type="tel" id="m_no" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <h2 style="text-align: center">Login Credential</h2>
+                    <label for="mail">Email:</label>
+                    <input type="mail" id="mail" required>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" required>
+                    <label for="c_pass">Confirm Password:</label>
+                    <input type="password" id="c_pass" required>
+                </div>
+                <hr>
+
+            </div>
+            <button class="btn" onclick="handelRegister()">Sign up</button>
+        </form>
+
+
+    </main>
+    <script src="shared.js"></script>
+    <script src="sign_up_teacher.js"></script>
+    <script src="./script/script_res.js"></script>
+</body>
+
+</html>

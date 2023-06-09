@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatimble" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="signup.html">
+    <link rel="styleSheet" href="shared.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <link rel="stylesheet" href="./responsive/mediaQueries.css">
+</head>
+
+<body>
+    <div class="backdrop"></div>
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+
+            </div>
+            <ul class="main_nav">
+                <li class="main_nav_item"><a href="index.html">Home</a></li>
+                <li class="main_nav_item"><a href="index.html">About</a></li>
+                <li class="main_nav_item"><a href="index.html">Contact Us</a></li>
+            </ul>
+            <ul class="side_nav">
+                <li class="side_nav_item"><a href="login.html">Login</a></li>
+                <li class="side_nav_item" id="sign_up_button" class="sign_up_option"><a>Sign Up</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="options">
+        <a href="signup_teacher.html">Teacher</a>
+        <a href="signup.html">Student</a>
+    </div>
+
+    <p class="message"></p>
+    <div class="container">
+
+        <form onsubmit="submitHandler(event)" id="myForm" class=" login-form">
+            <h1>Login</h1>
+            <hr style="margin: 20px 0px;">
+            <div class="form-group">
+                <label for="mail">Email</label>
+                <input type="email" class="input_field" id="mail" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Password</label>
+                <input type="password" class="input_field" id="pass" required>
+            </div>
+            <button class="login-form btn" onclick="myFunction()" id="login_btn"> Login
+            </button>
+        </form>
+    </div>
+    <script src="shared.js"></script>
+    <script src="login.js"></script>
+    <script src="./script/script_res.js"></script>
+</body>
+
+</html>

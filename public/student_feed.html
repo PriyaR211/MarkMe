@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarkMe</title>
+<link rel="icon" type="images/x-icon" href="./Images/LOGO.png" />
+<link rel="styleSheet" href="main.css">
+<link rel="styleSheet" href="shared.css">
+<link rel="styleSheet" href="student_feed.css">
+<link href="" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+
+            </div>
+            <ul class="main_nav">
+                <li class="main_nav_item"><a href="index.html">Home</a></li>
+                <li class="main_nav_item"><a href="index.html">About</a></li>
+                <li class="main_nav_item"><a href="index.html">Contact Us</a></li>
+                <li class="main_nav_item"><a>Schedule</a></li>
+            </ul>
+            <ul>
+                <div class="profile"></div>
+            </ul>
+        </nav>
+    </header>
+    <div class="profile_info">
+        <p>Name : <span class="user_name">Sandesh Tidake</span></p>
+        <p>User Id : <span class="mail">sandeshtidake@gmail.com</span></p>
+        <p>User : <span class="user_type">Student</span></p>
+        <p>Branch : <span class="branch">Computer</span></p>
+        <p>Div : <span class="Div">A</span></p>
+        <p>Roll No : <span class="roll_no">SECO2223A020</span></p>
+        <button onclick="SignOut()">Sign Out</button>
+
+    </div>
+    <main>
+        <p class="message"></p>
+        <span class="container">
+            <form id="myForm" onsubmit="submitHandler(event)">
+                <div class="element">
+                    <label for="subject">Subject : </label>
+                    <select name="subject" id="subject">
+                        <option value="dsa">DSA</option>
+                        <option value="ppl">PPL</option>
+                        <option value="em">M3</option>
+                        <option value="mp">MP</option>
+                        <option value="se">SE</option>
+                    </select>
+                </div>
+
+                <div class="element">
+                    <p id="timer">Time Remaning : 00:00</p>
+                </div>
+                <div class="element">
+                    <label for="code">Enter Code: </label>
+                    <input type="text" id="code">
+                </div>
+                <div class="element"><button id="markme">MarkMe</button></div>
+            </form>
+        </span>
+    </main>
+    <script src="shared_feed.js"></script>
+    <script src="student_feed.js"></script>
+
+</body>
+
+</html>

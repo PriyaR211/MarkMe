@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download attendance</title>
+    <link rel="stylesheet" href="T_feed_2.css">
+    <link rel="stylesheet" href="shared.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+</head>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+
+            </div>
+            <ul class="main_nav">
+                <li class="main_nav_item"><a href="index.html">Home</a></li>
+                <li class="main_nav_item"><a href="index.html">About</a></li>
+                <li class="main_nav_item"><a href="index.html">Contact Us</a></li>
+            </ul>
+            <ul>
+                <div class="profile"></div>
+            </ul>
+        </nav>
+    </header>
+    <div class="profile_info">
+        <p>Name : <span class="user_name">Sandesh Tidake</span></p>
+        <p>User Id : <span class="mail">sandeshtidake@gmail.com</span></p>
+        <p>User : <span class="user_type">Student</span></p>
+        <button onclick="SignOut()">Sign Out</button>
+
+    </div>
+
+    <p class="message"></p>
+    <div id="main">
+
+        <div class="btn block">
+            <button id="stop_btn">Stop</button>
+            <button id="cancel_btn" onclick="Cancel()">Cancel</button>
+        </div>
+
+        <div class="time block">
+            <p id="timer">Time Remaining : 00:00</p>
+        </div>
+
+        <div class="Count block">
+            <p id="count">Count : 00</p>
+        </div>
+
+        <div class="sheet block">
+            <a href="" id="download_btn" class="disabled">Download Sheet</a>
+        </div>
+
+    </div>
+
+    <script src="T_feed_2.js"></script>
+    <script src="shared_feed.js"></script>
+</body>
+
+</html>

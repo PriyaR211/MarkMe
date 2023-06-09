@@ -1,0 +1,234 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heading {
+    margin: 1rem;
+}
+.heading h2 {
+    font-size: 2.5rem;
+}
+.heading p {
+    font-size: 1.8rem;
+}
+.heading a {
+    text-decoration: none;
+}
+
+.container {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container_element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container_element .left {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.container_element .right {
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.left_element {
+    display: flex;
+}
+.label_input {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+.container_element label {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+.container_element input {
+    padding: 0.3rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border: 1px solid #40ba55;
+    border-radius: 4px;
+}
+
+.container_element select {
+   width: 12.8rem;
+    padding:  0.3rem ;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    border: 1px solid #40ba55;
+    border-radius: 4px;
+}
+.btn {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #40ba55;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem 8rem;
+    cursor: pointer;
+}
+/* *{
+    margin:0px;
+    padding:0px;
+}
+
+#leftPart{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#leftPart{
+    border:2px solid red;
+    width:40%;
+    height:70vh;
+    
+}
+
+form{
+    display:flex;    
+}
+
+input{
+    width:90%;
+}
+
+
+#main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top:10rem;   
+}
+
+
+#main input{
+    
+    height:1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    padding:2px 5px;
+}
+
+#main label{
+   
+    font-size: 1.2rem;
+}
+
+
+#rightPart{
+    border:2px solid green;
+    width:40%;
+    height:70vh;
+   
+}
+
+
+#rightPart{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+
+form{
+    margin:12px 4px;
+   
+    
+}
+
+
+.formRight #branch{
+    
+    margin-right:-35px;
+}
+
+.formLeft #roll{
+       
+       margin-right:31px;
+}
+
+.fomRight input{
+    
+    width:72%;
+}
+
+.fomRight{
+    
+    margin-left: 65px;
+}
+#upper{
+   
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5%;
+    margin-bottom:-7%;
+}
+
+#upper a{
+    color: green;
+    font-size: 1.35rem;
+}
+
+#lower{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#lower button{
+    border:2px solid green;
+    width:133px;
+    height: 40px;
+    font-size:larger;
+    background-color: rgb(55, 122, 55);
+    color:white;
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#lower button:hover{
+    color:rgb(237, 234, 234);
+    background-color: rgb(10, 103, 10);
+}
+
+
+#leftPart{
+    background-color:rgb(240, 239, 239);
+  
+    border-radius: 7px;
+}
+
+#rightPart{
+    background-color: rgb(234, 253, 247);
+    border-radius: 7px;
+  
+} */

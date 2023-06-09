@@ -1,0 +1,36 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    border:.4px solid green;
+}
+
+
+@media(max-width:560px){
+    .container{
+        /* border:2px solid blue; */
+        padding:0px;
+        margin:0px;
+    }
+
+    form .left{
+    /* border:2px solid red; */
+    padding:0px;
+    margin:0px;
+    margin:auto;
+    /* width:90vw; */
+    }
+
+    
+}
+
+
+@media(max-width:500px){
+    .left_element{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}

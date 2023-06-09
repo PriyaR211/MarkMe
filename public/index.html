@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkMe</title>
+    <link rel="icon" type="images/x-icon" href="./Images/LOGO.png" />
+    <link rel="styleSheet" href="main.css">
+    <link rel="styleSheet" href="shared.css">
+    <link href="" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.11.0/lottie.min.js"></script>
+    <link rel="stylesheet" href="./responsive/mediaQueries.css">
+</head>
+
+
+<body>
+    <div class="backdrop"></div>
+
+    <header>
+        <nav class="nav_bar">
+            <div class="logo">
+
+            </div>
+            <ul class="main_nav">
+                <li class="main_nav_item"><a href="">Home</a></li>
+                <li class="main_nav_item"><a href="#about">About</a></li>
+                <li class="main_nav_item"><a href="#contact">Contact Us</a></li>
+            </ul>
+            <ul class="side_nav">
+                <li class="side_nav_item"><a href="login.html">Login</a></li>
+                <li class="side_nav_item" id="sign_up_button" class="sign_option"><a>Sign Up</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    <div class="options">
+        <a href="signup_teacher.html">Teacher</a>
+        <a href="signup.html">Student</a>
+        <!-- <a id="back" href="./">Back</a> -->
+    </div>
+    <main>
+        <div class="main_body">
+            <div class="main_left">
+                <div class="name">
+                    <h1>MarkMe </h1>
+                    <div class="vector"></div>
+                </div>
+                <div class="slogan">
+                    <h2>"Mark your presence with ease:
+                        Attend smarter with our website."</h2>
+                </div>
+                <div class="description">
+                    <h3>
+                        Our platform is user-friendly, secure, and designed to save you time and hassle. Say goodbye to
+                        paper sign-in sheets and hello to a smarter way of attending events.
+                    </h3>
+                </div>
+
+                <div class="get_started_button">
+                    <input class="email" href="" placeholder="Enter email">
+                    <div class="get_combine">
+                        <a href="" class="get_started">Get Started</a>
+                        <div class="arrow"></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="main_right">
+                <div class="rectangle_container">
+                    <div class="rectangle">
+                    </div>
+
+                </div>
+                <div class="animation" id="animation_container"></div>
+                <script>
+                    var animation = bodymovin.loadAnimation({
+                        container: document.getElementById("animation_container"),
+                        path: './Images/anima.json',
+                        render: 'svg',
+                        loop: true,
+                        autoplay: true,
+                        name: 'demo'
+
+                    });
+                </script>
+
+
+            </div>
+
+        </div>
+        <hr>
+        <hr>
+        <div id="about" class="about-container">
+            <h1>About</h1>
+            <h2>It’s not about
+                Who we are ? it’s about
+                Why we are ?
+            </h2>
+            <div class="about_element">
+                <p>Welcome to Mark Me,<br> the smart way to take attendance! Our website is designed to streamline the
+                    process of attendance-taking, making it quick and efficient for both students and teachers.</p>
+                <img src="Images/about_1.png">
+            </div>
+            <div class="about_element">
+                <p>With our innovative system, students simply need to be in the designated location to be marked
+                    present. The website utilizes location tracking to ensure that students are physically present in
+                    the classroom, eliminating the possibility of fraudulent attendance.</p>
+                <img src="Images/about_1 (1).png">
+            </div>
+            <div class="about_element">
+                <p>To further ensure accuracy, Mark Me also uses OTP verification. When students arrive at their
+                    designated location, they will receive a unique OTP code that they must input into the website to
+                    confirm their attendance. This two-factor authentication process ensures that only the intended
+                    student is marked present.</p>
+                <img src="Images/about_1 (2).png">
+            </div>
+            <div class="about_element">
+                <p>For teachers, Mark Me is a time-saving solution that eliminates the need for manual
+                    attendance-taking. Our website automatically generates attendance reports, reducing administrative
+                    tasks and allowing teachers to focus on what really matters: teaching.</p>
+                <img id="img41" src="Images/about_1 (3).png">
+            </div>
+            <div class="about_element">
+                <p>At Mark Me, we understand that every second counts in the classroom. That's why we've created a
+                    system that is reliable, efficient, and user-friendly. Join us in revolutionizing the way attendance
+                    is taken - sign up for Mark Me today!</p>
+                <img id="img5" src="Images/about_5.png">
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="contact-container" id="contact">
+            <h1>Contact Us</h1>
+            <span class="contact_element"><img src="./Images/telephone.png"> <a
+                    href="tel:9130427953">+919130427953</a></span>
+            <span class="contact_element"><img src="./Images/email.png"><a
+                    href="mailto:sandeshtidake37@gmail.com">markme@gmail.com</a></span>
+            <span class="contact_element"><img src="./Images/placeholder (1).png"><a
+                    href="https://www.google.com/maps/place/D.Y.+Patil+College+of+Engineering/@18.646609,73.75911,16.01z/data=!4m6!3m5!1s0x3bc2b9f1ca8dab03:0x6237cfbd36f9acf9!8m2!3d18.6448378!4d73.7582119!16s%2Fg%2F11_px5nll">Location</a></span>
+        </div>
+
+    </main>
+    <footer class="main-footer">
+        <nav>
+            <ul class="footer-items">
+                <li class="footer-item">
+                    <a href="#">Terms of Use
+
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">Privacy Policy
+
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">markme2023(Beta)</a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">@Copyright</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="shared.js"></script>
+    <script src="./script/script_res.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,63 @@
+.profile {
+    background: url("./Images/profile.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#main {
+    border: 2px solid green;
+    width: 40%;
+    margin: auto;
+    margin-top: 5rem;
+    /* text-align: center; */
+}
+
+.block {
+    margin: 6% 5%;
+    font-size: 1.2rem;
+}
+button {
+    height: 34px;
+    border: none;
+    outline: none;
+    background: #40ba55;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #eee;
+    border-radius: 4px;
+    letter-spacing: 0.07em;
+}
+
+#download_btn {
+    color: white;
+    background-color: #40ba55;
+    padding: 0.4rem;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+.btn button {
+    width: 45%;
+}
+.btn #stop_btn {
+    background-color: #5d3995;
+}
+.btn #cancel_btn {
+    background-color: #ff3f3f;
+}

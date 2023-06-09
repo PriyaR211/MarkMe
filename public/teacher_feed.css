@@ -1,0 +1,82 @@
+.profile {
+  background: url("./Images/profile.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main {
+  display: flex;
+  margin-top: 5rem ;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #40ba55;
+  /* width: 40%; */
+  border-radius: 10px;
+}
+.container h2 {
+  font-size: 1.8rem;
+  color: #40ba55;
+  text-align: center;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3rem;
+}
+.container_element {
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  padding: 1.5rem;
+}
+.element_child {
+  padding: 0rem 2rem;
+  text-align: left;
+}
+.element_child label {
+  font-size: 1.5rem;
+}
+.element_child select {
+  font-size: 1rem;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+.code_generate p {
+  vertical-align: middle;
+  font-size: 1.5rem;
+  letter-spacing: 0.07em;
+  padding: 0rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 3rem;
+  border: solid 1px black;
+}
+.code_generate button {
+  background-color: #5d3995;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  letter-spacing: 0.07em;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 1rem;
+}
+
+.container_element .create_post_btn {
+  background-color: #40ba55;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 10rem;
+  letter-spacing: 0.07em;
+}
