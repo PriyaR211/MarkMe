@@ -8,7 +8,7 @@ const timerElement = document.getElementById("timer");
 const downloadButton = document.getElementById("download_btn");
 const user = url_user.get("name");
 const id = url_user.get("id");
-
+const subj = id.split("_")[0];
 //date and time for file name
 const currentDate = new Date();
 const formattedDate = currentDate
@@ -42,6 +42,7 @@ async function Cancel() {
     const res = await axios
         .post(`http://localhost:4000/api/v1/delete/${id}`, {
             email: user,
+            subject: subj,
         })
         .then((result) => {
             const data = result.data;
@@ -52,6 +53,7 @@ async function Cancel() {
             Message.style.color = "#ff3f3f";
             Message.textContent = err.response.data.msg;
         });
+    location.reload();
 }
 
 //timer
@@ -82,7 +84,7 @@ function startTimer(endTime) {
         }
     }, 1000);
 }
-
+var server_time;
 async function get_time() {
     const res = await axios
         .get(`http://localhost:4000/api/v1/feed/timer/${id}`)
@@ -96,6 +98,22 @@ async function get_time() {
         });
 }
 get_time();
+
+async function stop_session() {
+    const res = await axios
+        .post(`http://localhost:4000/api/v1/delete/${id}`, {
+            endTime: server_time,
+            subject: subj,
+        })
+        .then((result) => {
+            Message.style.color = "#40ba55";
+            Message.textContent = result.data.msg;
+        })
+        .catch((err) => {
+            Message.style.color = "#ff3f3f";
+            Message.textContent = err.response.data.msg;
+        });
+}
 
 function sheet_save(data) {
     const workbook = XLSX.utils.book_new();

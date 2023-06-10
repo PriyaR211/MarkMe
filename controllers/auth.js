@@ -1,12 +1,12 @@
 const User = require("../models/student");
 const { StatusCodes } = require("http-status-codes");
 const teacher = require("../models/teacher");
-const { BadRequestError, UnauthenticatedError } = require("../errors");  
+const { BadRequestError, UnauthenticatedError } = require("../errors");
 const Session = require("../models/session");
 const geoip = require("geoip-lite");
-const geolib = require('geolib');
-// student register
+const geolib = require("geolib");
 
+// student register
 const studentRegister = async (req, res) => {
     const {
         firstName,
@@ -105,6 +105,7 @@ const login = async (req, res) => {
     console.log("end of login");
 };
 
+// feeding profile data
 const feedData = async (req, res) => {
     const email = req.params.email;
     let user = await teacher.findOne({ email });
@@ -134,6 +135,7 @@ const feedData = async (req, res) => {
     }
 };
 
+//feed for timer , endTime
 const feedTimer = async (req, res) => {
     const base = req.params.base;
     // console.log(base)
@@ -150,6 +152,7 @@ const feedTimer = async (req, res) => {
     });
 };
 
+//generating session
 const generateSession = async (req, res) => {
     console.log("start of generate session");
     const { base, key, subject, year, branch, div, latitude, longitude } =
@@ -170,7 +173,6 @@ const generateSession = async (req, res) => {
             folder: [],
             latitude,
             longitude,
-            // xl,
             endTime,
         });
         res.status(StatusCodes.CREATED).json({
@@ -183,16 +185,8 @@ const generateSession = async (req, res) => {
 
 // ${key} `Marked data for session with key and subject ${subject}`
 const markData = async (req, res) => {
-
     console.log("start of mark data");
-    const {
-        key,
-        subject,
-        email,
-        studentLat,
-        studentLon,
-        deviceId,
-    } = req.body;
+    const { key, subject, email, studentLat, studentLon, deviceId } = req.body;
 
     const user = await User.findOne({ email });
     if (!user) {
@@ -209,13 +203,10 @@ const markData = async (req, res) => {
         });
     }
 
-    // console.log(presentSession.endTime)
-    // console.log(currentTime)
-
     if (presentSession.endTime <= currentTime) {
         return res.status(StatusCodes.BAD_REQUEST).json({
-            msg: "You are running out of Time !!!"
-        })
+            msg: "You are running out of Time !!!",
+        });
     }
 
     console.log("i am here");
@@ -235,7 +226,7 @@ const markData = async (req, res) => {
         deviceIdArray: { $elemMatch: { deviceId: deviceId } },
     });
 
-
+    // const clientIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     // const geo = geoip.lookup(clientIP);
 
     // // Check if the IP is outside India
@@ -244,27 +235,12 @@ const markData = async (req, res) => {
     //     return res.status(403).send("Access denied. IP address outside India.");
     // }
     // console.log(ip);
-    // if (ip) {
-    //     return res.status(StatusCodes.CONFLICT).json({
-    //         // msg:"Don't ever try too cheat! MarkMe is watching 👀 you",
-    //         msg: "Na Munna Na Tu toh apane .....!!! MarkMe is 👀 you",
-    //     });
-    // }
-
-    const location1 = {
-        latitude: presentSession.latitude,
-        longitude: presentSession.longitude
-    };
-
-    const location2 = {
-        latitude: studentLat,
-        longitude: studentLon
-    };
-    // Calculate the distance between the two locations in meters
-    // const distanceInMeters = geolib.getDistance(location1, location2);
-    console.log(location1 ,"  " , location2);
-    // console.log('Distance between the two locations:', distanceInMeters, 'km');
-
+    if (ip) {
+        return res.status(StatusCodes.CONFLICT).json({
+            msg: "Don't ever try too cheat! MarkMe is watching 👀 you",
+            // msg: "Na Munna Na Tu toh apane .....!!! MarkMe is 👀 you",
+        });
+    }
 
     if (
         user.div != presentSession.div ||
@@ -274,6 +250,20 @@ const markData = async (req, res) => {
             .status(StatusCodes.BAD_REQUEST)
             .json({ msg: "Student not belong to same class" });
     }
+
+    const userWithinRadius = isWithinRadius(
+        presentSession.latitude,
+        presentSession.longitude,
+        studentLat,
+        studentLon,
+        100
+    );
+    console.log(userWithinRadius); // true or false
+
+    // if(userWithinRadius==false){
+    //    return res.status(StatusCodes.BAD_REQUEST).json({msg:"You are not in range !!!"})
+    // }
+
     const result = await Session.updateOne(
         { base },
         {
@@ -302,6 +292,36 @@ const markData = async (req, res) => {
     console.log("end of markData");
 };
 
+//Auxillary functions for location
+function calculateDistance(lat1, lon1, lat2, lon2) {
+    const earthRadius = 6371e3; // Earth's radius in meters
+    const phi1 = degToRad(lat1);
+    const phi2 = degToRad(lat2);
+    const deltaPhi = degToRad(lat2 - lat1);
+    const deltaLambda = degToRad(lon2 - lon1);
+
+    const a =
+        Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +
+        Math.cos(phi1) *
+            Math.cos(phi2) *
+            Math.sin(deltaLambda / 2) *
+            Math.sin(deltaLambda / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = earthRadius * c;
+
+    return distance;
+}
+
+function degToRad(degrees) {
+    return degrees * (Math.PI / 180);
+}
+
+function isWithinRadius(myLat, myLon, userLat, userLon, radiusInFeet) {
+    const radiusInMeters = radiusInFeet * 0.3048; // Convert feet to meters
+    const distance = calculateDistance(myLat, myLon, userLat, userLon);
+    return distance <= radiusInMeters;
+}
+
 const deleteSession = async (req, res) => {
     const base = req.params.base;
     const { email } = req.body;
@@ -314,6 +334,30 @@ const deleteSession = async (req, res) => {
         return res.status(404).json({ msg: "Session Not Found !!" });
     }
     res.status(200).json({ msg: "Session deleted Successfully" });
+};
+
+// Ending the session at any time
+const stopSession = async (req, res) => {
+    const base = req.params.base;
+    const { endTime, subject } = req.body;
+
+    const presentSession = await Session.findOne({ subject, base });
+
+    if (!presentSession) {
+        return res
+            .status(StatusCodes.BAD_REQUEST)
+            .json({ msg: "Unable to find session" });
+    }
+
+    const result = await Session.updateOne({ base }, { endTime: endTime });
+
+    if (!result.nModified) {
+        return res
+            .status(StatusCodes.BAD_REQUEST)
+            .json({ msg: "Oop's something went wrong!!!" });
+    }
+
+    res.status(StatusCodes.OK).json({ msg: "Session Stoped ", presentSession });
 };
 
 const downloadSheet = async (req, res) => {
@@ -333,6 +377,7 @@ module.exports = {
     generateSession,
     markData,
     deleteSession,
+    stopSession,
     downloadSheet,
     feedTimer,
 };
