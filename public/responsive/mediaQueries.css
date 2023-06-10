@@ -50,7 +50,7 @@ body{
       
     body{
         /* background-color:rgb(180, 177, 177); */
-        border:2px solid green;
+        /* border:2px solid green; */
         width:100vw;
     }
     
@@ -273,13 +273,7 @@ body{
         margin-top:12px;
     }  
 
-
-
-
-
-
 }
-
 
 
 
@@ -377,12 +371,13 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color:green;
+        background-color:#40ba55;
         position:absolute;
         top: 64px;
         right: 0px;
         width: 233px;
         height: 214.6px;
+        z-index:11;
         transition:all .2s ease-out;
         /* transition:width 2s linear 1s; */
        
@@ -392,12 +387,13 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: green;
+        background-color: #40ba55;
         position:absolute;
         top: 278px;
         right: 0px;
         width: 233px;
         height: 134px;
+        z-index:11;
         transition:all .2s ease-out;
     }
     @media(min-width:540px){
