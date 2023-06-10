@@ -234,7 +234,7 @@ const markData = async (req, res) => {
     //     // IP is outside India, block the request
     //     return res.status(403).send("Access denied. IP address outside India.");
     // }
-    console.log(ip);
+    // console.log(ip);
     if (ip) {
         return res.status(StatusCodes.CONFLICT).json({
             msg: "Don't ever try too cheat! MarkMe is watching 👀 you",

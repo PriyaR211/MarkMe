@@ -42,6 +42,7 @@ async function Cancel() {
     const res = await axios
         .post(`http://localhost:4000/api/v1/delete/${id}`, {
             email: user,
+            subject: subj,
         })
         .then((result) => {
             const data = result.data;
@@ -52,6 +53,7 @@ async function Cancel() {
             Message.style.color = "#ff3f3f";
             Message.textContent = err.response.data.msg;
         });
+    location.reload();
 }
 
 //timer
